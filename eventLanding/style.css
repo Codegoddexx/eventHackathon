@@ -255,27 +255,24 @@ header {
   justify-content: space-between;
 }
 
-.hero p{
+.hero p {
   /* max-width: 19rem; */
   font-weight: 600;
-    font-size: 4.7vmin;
-    z-index: 1;
+  font-size: 4.7vmin;
 }
 
-
 .heroImage {
-width: 40rem;
-height: fit-content;
-display: grid;
-place-items: center;
+  width: 40rem;
+  height: fit-content;
+  display: grid;
+  place-items: center;
 }
 
 .heroImage img {
-    width: 100%;
-    margin-top: 0;
-    padding: 0;
+  width: 100%;
+  margin-top: 0;
+  padding: 0;
 }
-
 
 h1 {
   font-family: "Validity";
@@ -347,8 +344,8 @@ h1 {
 }
 
 .actionbuttons {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .actionbuttons * + * {
@@ -386,19 +383,17 @@ h1 {
     0 12px 10px -3px #39a2db;
 }
 
-
 .createEvent {
   color: white;
   background-color: #0f587f;
 }
 
-
 .footerDiv {
   display: flex;
   justify-content: center;
   align-items: end;
-  background: url("/assets/Wave-svg.png") no-repeat center 0% / 150% ;
-padding-top: 12rem ;
+  background: url("/assets/Wave-svg.png") no-repeat center 0% / 150%;
+  padding-top: 12rem;
 }
 
 .footerDiv a {
@@ -408,7 +403,7 @@ padding-top: 12rem ;
   line-height: 3rem;
 }
 
-.footerDiv li{
+.footerDiv li {
   list-style-type: none;
 }
 
