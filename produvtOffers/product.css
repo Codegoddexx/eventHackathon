@@ -1,11 +1,49 @@
+:root {
+  --sage: #c9cba3ff;
+  --wine: hsla(350, 30%, 34%, 1);
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Acumin Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro'), url('Acumin-RPro.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Acumin Pro Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro Italic'), url('Acumin-ItPro.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Acumin Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro Bold'), url('Acumin-BdPro.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Acumin Pro Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro Bold Italic'), url('Acumin-BdItPro.woff') format('woff');
+  }
+
 body {
   background-color: rgb(15, 9, 17);
+  font-family: 'Acumin Pro Bold';
 }
 
 .main-layout {
@@ -23,6 +61,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
 }
 
 .logo img {
@@ -33,7 +72,7 @@ body {
 h6 {
   font-size: 1.5rem;
   font-weight: 900;
-  font-family: var(-- "Validity");
+  font-family: 'Acumin Pro Bold';
   color: hsl(39, 100%, 83%);
   margin: 0 !important;
 }
@@ -46,8 +85,8 @@ h6 {
 
 .card {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 15rem;
+  height: 15rem;
   color: #2e2d31;
   background: #131313;
   overflow: hidden;
@@ -98,12 +137,12 @@ h6 {
 
 .card_subtitle {
   display: block;
-  font-size: 12px;
+  font-size: 1rem;
   margin-bottom: 10px;
 }
 
 .card_description {
-  font-size: 14px;
+  font-size: 1rem;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -115,4 +154,19 @@ h6 {
 .card:hover .card_description {
   opacity: 1;
   transition-delay: 0.25s;
+}
+
+ a {
+  text-decoration: none;
+}
+
+.actionBtn {
+  border: none;
+  background-color: #723d46ff;
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  padding: 1rem;
+  border-radius: 5rem;
+  text-decoration: none;
 }

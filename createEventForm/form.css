@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(15, 9, 17);
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo img {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: var(-- "Validity");
+  color: hsl(39, 100%, 83%);
+  margin: 0 !important;
+}
+
+#header {
+  color: rgb(216, 187, 151);
+  margin-bottom: 1rem;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+form {
+  width: 50%;
+  height: 80vh;
+  display: grid;
+  color: white;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.main-layout {
+  margin: 2rem 2rem 2rem;
+}
+
+#description {
+  min-height: 3rem;
+  margin-bottom: 2rem;
+}
+
+.formContainer {
+  display: flex;
+}
+
+input {
+  border: none;
+  min-height: 2rem;
+  font-size: 1rem;
+}
+
+textarea {
+  font-size: 1rem;
+  text-align: left;
+}
+
+input:hover {
+  border: 1px solid rgba(154, 93, 173, 1);
+}
+
+.imageContainer {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+
+#createButton button {
+  border: none;
+  background-color: #723d46ff;
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  padding: 1rem;
+  border-radius: 5rem;
+  text-decoration: none;
+}

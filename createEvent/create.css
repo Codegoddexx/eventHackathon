@@ -1,22 +1,38 @@
 @font-face {
-  font-family: "Bavistage";
-  src: url("../assets/fonts/Bavistage.otf");
-}
-@font-face {
-  font-family: "AlteSchwabacherOSF-DemiBold";
-  src: url("../assets/fonts/AlteSchwabacherOSF-DemiBold.ttf");
-}
-@font-face {
-  font-family: "Asgerion";
-  src: url("../assets/fonts/Asgerion.otf");
-}
-@font-face {
-  font-family: "Validity";
-  src: url("../assets/fonts/ValidityScriptBI_PERSONAL_USE.ttf");
-}
+  font-family:'Acumin Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro'), url('Acumin-RPro.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Acumin Pro Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro Italic'), url('Acumin-ItPro.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Acumin Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro Bold'), url('Acumin-BdPro.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Acumin Pro Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro Bold Italic'), url('Acumin-BdItPro.woff') format('woff');
+  }
+
 
 body {
   background-color: rgb(15, 9, 17);
+  font-family:'Acumin Pro';
 }
 
 .logo a {
@@ -34,10 +50,11 @@ body {
 h6 {
   font-size: 1.5rem;
   font-weight: 900;
-  font-family: var(-- "Validity");
+  font-family:'Acumin Pro';
   color: hsl(39, 100%, 83%);
   margin: 0 !important;
 }
+
 
 .login-box {
   position: absolute;
@@ -85,9 +102,10 @@ h6 {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: rgb(81, 32, 97);
   pointer-events: none;
   transition: 0.5s;
+  margin-bottom: 5px;
 }
 
 .login-box .user-box input:focus ~ label,
@@ -111,6 +129,15 @@ h6 {
   transition: 0.5s;
   margin-top: 40px;
   letter-spacing: 3px;
+}
+
+.submitBtn {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.2rem;
 }
 
 .login-box a:hover {

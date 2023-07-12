@@ -1,11 +1,48 @@
+@font-face {
+  font-family: "Validity";
+  src: url("../assets/fonts/ValidityScriptBI_PERSONAL_USE.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Acumin Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro'), url('Acumin-RPro.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Acumin Pro Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro Italic'), url('Acumin-ItPro.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Acumin Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro Bold'), url('Acumin-BdPro.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Acumin Pro Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Acumin Pro Bold Italic'), url('Acumin-BdItPro.woff') format('woff');
+  }
+
 body {
   background-color: rgb(15, 9, 17);
+  font-family: 'Acumin Pro Bold';
 }
 
 .logo a {
@@ -26,6 +63,17 @@ h6 {
   font-family: var(-- "Validity");
   color: hsl(39, 100%, 83%);
   margin: 0 !important;
+}
+
+.theHeader {
+  background: rgba(154, 93, 173, 1);
+}
+
+h1 {
+  font-family: 'Acumin Pro Bold Italic';
+  font-size: 15vmin;
+  margin: 0;
+  color: ghostwhite;
 }
 
 .card {
@@ -61,7 +109,7 @@ h6 {
 }
 
 .main-layout {
-  min-width: 100vw;
+  /* min-width: 100vw; */
   min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <!-- <script defer src="./eventForm.js"></script> -->
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="logo">
+        <a href="../index.html">
+            <img src="../assets/logo.svg" alt="EVENTLY LOGO">
+            <h6> EVENTSPICE </h6>
+        </a>
+    </div>
+
+    <div class="main-layout">
+        <div id="header">
+            <h1>CREATE EVENT</h1>
+        </div>
+        <div class="formContainer">
+            <form action=""">
+                <label for="">Fill in the dwtails of your event correctly to create an event.</label>
+                <br><br>
+
+                <label for="eventName">Event Title</label>
+                <input type="text" id="eventName"
+                    placeholder="Something event, Something comference, Something party"><br>
+
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" required><br>
+
+                <label for="date">Time</label>
+                <input type="date" name="dateAndTime" id="date" required><br>
+
+
+                <label for="endDate">Time</label>
+                <input type="date" name="dateAndTime" id="endDate" required><br>
+
+
+                <label for="email">Email</label>
+                <input id="email" type="email" required><br>
+
+                <!-- <label for="ticketPrice">Ticket Price</label>
+                <input type="text" id="ticketPrice" placeholder="Free, #2000" required><br> -->
+
+                <label for="description">Description</label>
+                <textarea type="text" id="description" placeholder="describe your event here" required>
+                    </textarea>
+                <br>
+                <a href="" id="createButton"><button>Create</button></a>
+            </form>
+            <div class="imageContainer">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="./eventForm.js"></script>
+</body>
+
+</html>
