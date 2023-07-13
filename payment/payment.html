@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Durabyte Studio | Payment Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: 'Acumin Pro';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Acumin Pro'), url('Acumin-RPro.woff') format('woff');
+        }
+
+        body {
+            background: rgb(15, 9, 17);
+            font-family: 'Acumin Pro';
+            font-size: .12rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #3676C8 !important;
+        }
+
+        .form-control {
+            display: block;
+            height: 3rem;
+            font-size: 1.5rem;
+            width: 100%;
+            line-height: 35px;
+            padding: 0 10px;
+            border: solid 1px rgba(154, 93, 173, 1) !important;
+            border-radius: 2px !important;
+            outline: none !important;
+        }
+
+        .form-control:active,
+        .form-control:active,
+        .form-control:focus,
+        .form-control:focus {
+            border-color: #3676C8 !important;
+        }
+
+        .element-label {
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 2.5em;
+        }
+
+        .payment-form {
+            padding: 20px;
+            border: solid 1px #eaeaea;
+            border-radius: 4px;
+            background: #fbfbfb;
+        }
+
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            max-width: 2.5rem;
+            max-height: 2.5rem;
+        }
+
+        h6 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            font-family: 'Acumin Pro Bold';
+            color: hsl(39, 100%, 83%);
+            margin: 0 !important;
+        }
+
+        .header {
+            display: inline-block;
+            width: 100%;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+
+
+        .header .page-name {
+            font-weight: normal;
+            margin: 20px auto 0;
+            width: 80%;
+            line-height: 1.3;
+            font-size: 3rem;
+            margin-top: 0;
+            color: white;
+        }
+
+        .paystack-footer {
+            width: 300px;
+            max-width: 100%;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin: 40px auto;
+            text-align: center;
+            opacity: .7;
+            clear: both;
+        }
+
+        .paystack-footer img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <a href="../index.html">
+            <img src="../assets/logo.svg" alt="EVENTLY LOGO">
+            <h6> EVENTSPICE </h6>
+        </a>
+    </div>
+    <div class="paystack-color-bar"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 offset-md-4">
+                <div class="header">
+                    <div class="page-info">
+                        <h1 id="page-name" class="page-name">Ticket Payment</h1>
+                    </div>
+                </div>
+                <form id="paymentForm" class="payment-form">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="element-label"><span>First Name</span></div>
+                                <input type="text" id="first-name" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="element-label"><span>Last Name</span></div>
+                                <input type="text" id="last-name" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="element-label"><span>Email</span></div>
+                        <input type="text" id="email-address" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="element-label"><span>Currency</span></div>
+                                <select class="form-control" disabled="true">
+                                    <option value="NGN">NGN</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="element-label"><span>Amount to charge</span></div>
+                                <input type="text" id="amountv" onkeypress="return isNumber(event)"
+                                    class="form-control">
+                                <input type="hidden" id="amount" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Pay Now</button>
+
+                    </div>
+                </form>
+                <div id="paystack-footer" class="paystack-footer animated fadeIn">
+                    <a target="_blank" href="https://paystack.com/what-is-paystack">
+                        <img alt="Paystack secured badge"
+                            src="https://paystack.com/assets/payment/img/paystack-badge-cards.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://js.paystack.co/v2/popup.js"></script>
+    <script>
+        var amountv = document.getElementById('amountv');
+        amountv.addEventListener("input", updateValue);
+        function updateValue(e) {
+            var am = Math.round(((parseInt(e.srcElement.value) + 100) / (1 - 0.039)), 2);
+            document.getElementById("amount").value = am ? am : '';
+            document.getElementById("total").innerHTML = am ? am : '';
+        }
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+        var paymentForm = document.getElementById('paymentForm');
+        paymentForm.addEventListener("submit", payWithPaystack, false);
+        function payWithPaystack(e) {
+            e.preventDefault();
+            var email = document.getElementById("email-address").value;
+            var amount = document.getElementById("amount").value;
+            var firstname = document.getElementById("first-name").value;
+            var lastname = document.getElementById("last-name").value;
+            if (email && amount && firstname && lastname) {
+                var handler = PaystackPop.setup({
+                    key: 'pk_live_your_public_key', // Replace with your public key
+                    email: email,
+                    amount: amount * 100,
+                    firstname: firstname,
+                    lastname: lastname,
+                    ref: '' + Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+                    // label: "Optional string that replaces customer email"
+                    onClose: function () {
+                        alert('Window closed.');
+                    },
+                    callback: function (response) {
+                        var message = 'Payment complete! Reference: ' + response.reference;
+                        alert(message);
+                    }
+                });
+                handler.openIframe();
+            }
+            else {
+                alert('all fields are required')
+            }
+        }
+    </script>
+</body>
+
+</html>

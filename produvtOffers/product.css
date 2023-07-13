@@ -69,6 +69,8 @@ body {
   max-height: 2.5rem;
 }
 
+
+
 h6 {
   font-size: 1.5rem;
   font-weight: 900;
@@ -81,16 +83,19 @@ h6 {
   display: flex;
   align-items: center;
   gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .card {
   position: relative;
   width: 15rem;
-  height: 15rem;
+  height: 20rem;
   color: #2e2d31;
-  background: #131313;
+  background-color: #7c7b7f;
   overflow: hidden;
   border-radius: 20px;
+  display: flex;
+  margin: auto;
 }
 
 .temporary_text {
@@ -98,6 +103,11 @@ h6 {
   font-size: 24px;
   padding: 6px 12px;
   color: #f8f8f8;
+}
+
+.temporary_text img {
+  width: 10rem;
+
 }
 
 .card_title {

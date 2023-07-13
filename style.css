@@ -50,7 +50,7 @@ body {
   background-image: url("../assets/Meteor.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 150vh;
+  /* height: 150vh; */
   font-family: 'Acumin Pro';
 }
 
@@ -107,7 +107,7 @@ header {
 .logins {
   display: flex;
   gap: 2ewm;
-  width: 10rem;
+  width: 12rem;
   align-items: center;
   height: 100%;
 }
@@ -155,6 +155,14 @@ header {
   font-weight: 700;
 }
 
+.logins img {
+  display: none;
+}
+
+#toggle {
+  display: none;
+}
+
 .main-layout {
   height: 100dvh;
   height: 100vh;
@@ -165,14 +173,14 @@ header {
 .hero-container {
   /* background: url("https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80")
     no-repeat center center / cover; */
-  height: 100vh;
-  width: 100%;
-  display: grid;
-  color: var(--sage);
-}
-
-.hero {
-  /* width: 100%; */
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    color: var(--sage);
+  }
+  
+  .hero {
+    /* width: 100%; */
   padding: 4rem 3rem 0 3rem;
   display: flex;
   align-items: start;
@@ -285,6 +293,10 @@ h2 {
   text-decoration: none;
 }
 
+.dropdown-content {
+  display: none;
+}
+
 .actionBtn {
   width: 15rem;
   height: 40px;
@@ -317,6 +329,18 @@ h2 {
   background-color: #0f587f;
 }
 
+.image {
+  width: 35.3rem;
+}
+
+.lock {
+  width: 20rem; 
+}
+
+.buyTicketTextText {
+  flex: 1;
+}
+
 .footerDiv {
   display: flex;
   justify-content: center;
@@ -336,13 +360,31 @@ h2 {
   list-style-type: none;
 }
 
+
 @media screen and (max-width: 500px) {
   .links {
     display: none;
   }
-  section {
-    display: none;
+  .findEvent {
+    flex-direction: column;
   }
+.logins{
+  display: flex;
+  flex-direction: row-reverse;
+}
+ .headernav{
+  display: none;
+}
+.logins button{
+  display: none;
+}
+
+.logins img{
+  display: block;
+  width: 3rem;
+  
+}
+
   .actionbuttons {
     display: flex;
     flex-direction: column;
@@ -350,11 +392,120 @@ h2 {
     gap: 2rem;
     margin-top: 4rem;
   }
-  .actionbuttons * + * {
-    margin-bottom: 5rem;
-    margin-left: 0;
-  }
+
   .main-layout {
     height: 100vh;
   }
+  .hero {
+    display: block;
+    height: 100vh;
+    padding-top: 0;
+    gap: 0;
+    margin-bottom: 0;
+    display: grid;
+    align-items: center;
+    position: relative;
+  }
+
+  
+
+  .actionbuttons{
+    display: grid;
+    grid-template-columns: 1 ;
+    position: absolute;
+    bottom: 0;
+    left: 4rem;
+  }
+
+  .actionbuttons * + *{
+    margin: 0;
+  }
+  
+  h1 {
+    margin-top: 0;
+  }
+  .heroImage {
+    width: 5rem;
+    margin-bottom: 0;
+    margin-bottom: 0;
+    height: fit-content;
+  }
+
+.heroImage img {
+  width: 15rem;
+  position: absolute;
+  right: 0;
+  bottom: 10rem;
+}
+  
+  footer {
+    display: none;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 5rem;
+  left: 22rem;
+  background-color: var(--wine);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: var(--sage);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropdown-content {
+  display: none;
+}
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hamburger-icon {
+  cursor: pointer;
+}
+
+.toggle-checkbox:checked + .hamburger-icon img {
+  /* Add styles to the checked image */
+}
+
+.toggle-checkbox:checked ~ .dropdown-content {
+  display: block;
+}
+
+
+}
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
 }

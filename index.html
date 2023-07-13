@@ -18,27 +18,43 @@
         <header>
             <div class="logo">
                 <img src="../assets/logo.svg" alt="EVENTLY LOGO">
-                <h6> EVENTSPICE </h6>
+                <h6> EVENTEASE </h6>
             </div>
 
             <div class="links">
-                <a href="/produvtOffers/product.html">Product</a>
-                <a href="/discoverEvents/discover.html">Discover</a>
-                <a href="">Pricing</a>
-                <a href="#aboutUs">About</a>
-                <a href="../contactUs/contactUs.html">Contact Us</a>
+                <a class="headernav"href="/produvtOffers/product.html">Product</a>
+                <a class="headernav" href="/discoverEvents/discover.html">Discover</a>
+                <a class="headernav" href="">Pricing</a>
+                <a class="headernav" href="#aboutUs">About</a>
+                <a class="headernav" href="../contactUs/contactUs.html">Contact Us</a>
             </div>
             <div class="logins">
-                <a href="/Login/login.html" class="login">Log in</a>
-                <button><a href="/signUp/signup.html">Sign Up</a></button>
-            </div>
+                <input type="checkbox" id="toggle" class="toggle-checkbox">
+                <label for="toggle" class="hamburger-icon">
+                  <img src="/assets/hamburger-menu-svgrepo-com.png" alt="login and products">
+                </label>
+
+                <div class="dropdown-content">
+                    <a class="headernav" href="/Login/login.html" class="login">Log in</a>
+                    <a class="headernav"href="/produvtOffers/product.html">Product</a>
+                <a class="headernav" href="/discoverEvents/discover.html">Discover</a>
+                <a class="headernav" href="#aboutUs">About</a>
+                <a class="headernav" href="../contactUs/contactUs.html">Contact Us</a>
+                </div>
+
+                <a class="headernav" href="/Login/login.html" class="login">Log in</a>
+                <button><a class="headernav" href="/signUp/signup.html">Sign Up</a></button>
+              </div>
+              
+              
+              
         </header>
         <main>
 
             <div class="hero-container">
                 <div class="hero">
                     <div>
-                        <h1>Eventspice</h1>
+                        <h1>Eventsease</h1>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos quidem adipisci autem
                             ipsa
                             maxime a
@@ -56,6 +72,8 @@
                     <a href="/createEvent/create.html"><button class="actionBtn">Create an event</button></a>
                 </div>
             </div>
+
+
             <section id="aboutUs">
                 <div class="findEvent">
                     <div class="findEventText">
@@ -68,7 +86,7 @@
                         <!-- <button class="btn">Find your next event</button> -->
                     </div>
                     <div>
-                        <img src="/assets/37439904-removebg-preview.png" alt="Image to demostrate finding events  ">
+                        <img class="image" src="/assets/37439904-removebg-preview.png" alt="Image to demostrate finding events  ">
                     </div>
                 </div>
 
@@ -77,18 +95,21 @@
                         <h2>Create Event And Have Complete Control.</h2>
                         <p>Create your event in the easiest way. <br> <br> Your audience is global because your event
                             can be seen and graced by anyone, anywhere.You have the power to connect with people from
-                            all over the world. <br> <br> A secure way to ell your tickets quickly and easily. Just
+                            all over the world. <br> <br> A secure way to sell your tickets quickly and easily. Just
                             create a listing, set your price, and wait for buyers.</p>
                         <br>
                         <!-- <button class="btn">Find your next event</button> -->
                     </div>
                     <div>
-                        <img src="/assets/37439904-removebg-preview.png" alt="Image to demostrate finding events  ">
+                        <img class="image" src="/assets/Saly-44.svg" alt="Image to demostrate finding events  ">
                     </div>
                 </div>
 
                 <div class="buyTicket findEvent">
-                    <div class="buyTicketText findEventText">
+                    <div>
+                        <img class="lock image" src="/assets/Lock-locked.png" alt="Image to demostrate Ticketing">
+                    </div>
+                    <div class="buyTicketTextText findEventText">
                         <h2>Buy your Ticket in one click</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quisquam sunt voluptate eius
                             possimus rerum quo necessitatibus eveniet aspernatur harum, debitis amet! Libero earum
@@ -98,7 +119,7 @@
                         <!-- <button class="btn">Find your next event</button> -->
                     </div>
                     <div>
-                        <img src="/assets/37439904-removebg-preview.png" alt="Image to demostrate finding events  ">
+                        <img class="lock image" src="/assets/Lock-open.png" alt="Image to demostrate Ticketing">
                     </div>
                 </div>
             </section>

@@ -248,3 +248,18 @@ h6 {
   color: #aaa;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 500px) {
+  *{
+    margin: 0;
+  }
+  
+  #password{
+    padding-bottom: 0;
+  }
+
+  a #submitButton {
+    margin-top: 0s;
+    border: 1px solid red;
+  }
+}
