@@ -96,3 +96,10 @@ input:hover {
   border-radius: 5rem;
   text-decoration: none;
 }
+
+@media screen and (max-width: 500px) {
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -11,31 +11,23 @@
   font-family: 'Acumin Pro';
   font-style: normal;
   font-weight: normal;
-  src: local('Acumin Pro'), url('Acumin-RPro.woff') format('woff');
+  src: local('Acumin Pro'), url('../assets/fonts/Acumin-RPro.woff') format('woff');
   }
   
-
-  @font-face {
-  font-family: 'Acumin Pro Italic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Acumin Pro Italic'), url('Acumin-ItPro.woff') format('woff');
-  }
   
-
   @font-face {
   font-family: 'Acumin Pro Bold';
   font-style: normal;
-  font-weight: normal;
-  src: local('Acumin Pro Bold'), url('Acumin-BdPro.woff') format('woff');
+  font-weight: bold;
+  src: local('Acumin Pro Bold'), url('../assets/fonts/Acumin-BdPro.woff') format('woff');
   }
   
 
   @font-face {
   font-family: 'Acumin Pro Bold Italic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Acumin Pro Bold Italic'), url('Acumin-BdItPro.woff') format('woff');
+  font-style: italic;
+  font-weight: bold;
+  src: local('Acumin Pro Bold Italic'), url('../assets/fonts/Acumin-BdItPro.woff') format('woff');
   }
 
 *::-webkit-scrollbar {
@@ -188,9 +180,9 @@ header {
 }
 
 .hero p {
-  /* max-width: 19rem; */
+  max-width: 100%;
   font-weight: 600;
-  font-size: 4.7vmin;
+  font-size: 4vmin;
 }
 
 .heroImage {
@@ -407,7 +399,10 @@ h2 {
     position: relative;
   }
 
-  
+  .hero p {
+    font-size: 0.8rem;
+    line-height: 1.3ewm;
+  }
 
   .actionbuttons{
     display: grid;
@@ -438,8 +433,13 @@ h2 {
   bottom: 10rem;
 }
   
-  footer {
-    display: none;
+  .footerDiv {
+    background: url("/assets/Wave-svg.png") no-repeat  0% / 150%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   /* The container <div> - needed to position the dropdown content */

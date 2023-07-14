@@ -9,16 +9,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        *::-webkit-scrollbar {
+            display: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         @font-face {
             font-family: 'Acumin Pro';
             font-style: normal;
             font-weight: normal;
-            src: local('Acumin Pro'), url('Acumin-RPro.woff') format('woff');
+            src: local('Acumin Pro'), url('../assets/fonts/Acumin-RPro.woff') format('woff');
+        }
+
+
+        @font-face {
+            font-family: 'Acumin Pro Bold';
+            font-style: normal;
+            font-weight: bold;
+            src: local('Acumin Pro Bold'), url('../assets/fonts/Acumin-BdPro.woff') format('woff');
+        }
+
+
+        @font-face {
+            font-family: 'Acumin Pro Bold Italic';
+            font-style: italic;
+            font-weight: bold;
+            src: local('Acumin Pro Bold Italic'), url('../assets/fonts/Acumin-BdItPro.woff') format('woff');
         }
 
         body {
@@ -123,7 +147,7 @@
     <div class="logo">
         <a href="../index.html">
             <img src="../assets/logo.svg" alt="EVENTLY LOGO">
-            <h6> EVENTSPICE </h6>
+            <h6> EVENTEASE </h6>
         </a>
     </div>
     <div class="paystack-color-bar"></div>
@@ -170,7 +194,11 @@
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary" type="submit">Pay Now</button>
-
+                        <div class="float-right">
+                            <h6>Total</h6>
+                            <h3 id='total'></h3>
+                        </div>
+      
                     </div>
                 </form>
                 <div id="paystack-footer" class="paystack-footer animated fadeIn">
@@ -201,35 +229,36 @@
         }
         var paymentForm = document.getElementById('paymentForm');
         paymentForm.addEventListener("submit", payWithPaystack, false);
+
         function payWithPaystack(e) {
-            e.preventDefault();
-            var email = document.getElementById("email-address").value;
-            var amount = document.getElementById("amount").value;
-            var firstname = document.getElementById("first-name").value;
-            var lastname = document.getElementById("last-name").value;
-            if (email && amount && firstname && lastname) {
-                var handler = PaystackPop.setup({
-                    key: 'pk_live_your_public_key', // Replace with your public key
-                    email: email,
-                    amount: amount * 100,
-                    firstname: firstname,
-                    lastname: lastname,
-                    ref: '' + Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-                    // label: "Optional string that replaces customer email"
-                    onClose: function () {
-                        alert('Window closed.');
-                    },
-                    callback: function (response) {
-                        var message = 'Payment complete! Reference: ' + response.reference;
-                        alert(message);
-                    }
-                });
-                handler.openIframe();
-            }
-            else {
-                alert('all fields are required')
-            }
-        }
+  e.preventDefault();
+  var email = document.getElementById("email-address").value;
+  var amount = document.getElementById("amount").value;
+  var firstname = document.getElementById("first-name").value;
+  var lastname = document.getElementById("last-name").value;
+  
+  if (email && amount && firstname && lastname) {
+    var handler = PaystackPop.setup({
+      key: 'pk_live_your_public_key', // Replace with your public key
+      email: email,
+      amount: amount,
+      firstname: firstname,
+      lastname: lastname,
+      onClose: function () {
+        alert('Window closed.');
+      },
+      callback: function (response) {
+        var message = 'Payment complete! Reference: ' + response.reference;
+        alert(message);
+        window.location.href = "successful.html"; // Redirect to successful.html
+      }
+    });
+    handler.openIframe();
+  } else {
+    alert('All fields are required');
+  }
+}
+
     </script>
 </body>
 
