@@ -228,7 +228,7 @@
             return true;
         }
         var paymentForm = document.getElementById('paymentForm');
-        paymentForm.addEventListener("submit", payWithPaystack, false);
+        paymentForm.addEventListener("submit", payWithPaystack);
 
         function payWithPaystack(e) {
   e.preventDefault();
