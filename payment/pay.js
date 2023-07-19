@@ -13,7 +13,7 @@ paymentForm.addEventListener('submit', (event) => {
   fetch('https://api.paystack.co/transaction/initialize', {
     method: 'POST',
     headers: {
-      'Authorization': 'Bearer YOUR_API_KEY',
+      'Authorization': 'sk_test_410d86b9daa95a19170dd32e52fde759fd472932 ',
     },
     body: formData
   })
@@ -26,7 +26,7 @@ paymentForm.addEventListener('submit', (event) => {
     fetch(`https://api.paystack.co/transaction/verify/${reference}`, {
       method: 'GET',
       headers: {
-        'Authorization': 'Bearer YOUR_API_KEY',
+        'Authorization': 'sk_test_410d86b9daa95a19170dd32e52fde759fd472932 ',
       },
     })
     .then(response => response.json())
